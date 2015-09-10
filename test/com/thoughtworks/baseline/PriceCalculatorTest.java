@@ -11,7 +11,7 @@ public class PriceCalculatorTest {
     @Test
     public void shouldCalculatesTotalPriceOfItemsInTheItemListWhenNoItemsArePresentInTheItemList() {
         List<String> items = new ArrayList<>();
-        BasicItem basicItem = new BasicItem();
+        NonImportedItem basicItem = new NonImportedItem();
 
         PriceCalculator priceCalculator = new PriceCalculator(items, basicItem);
 
@@ -21,7 +21,7 @@ public class PriceCalculatorTest {
     @Test
     public void shouldCalculatesTotalPriceOfItemsInTheItemListWhenOnlyItemIsPresentInTheItemList() {
         List<String> items = new ArrayList<>();
-        BasicItem basicItem = new BasicItem();
+        NonImportedItem basicItem = new NonImportedItem();
 
         items.add("1 book at 12.49");
 
@@ -33,7 +33,7 @@ public class PriceCalculatorTest {
     @Test
     public void shouldCalculatesTotalPriceOfItemsInTheItemListWhenMoreThanOneItemIsPresentInTheItemList() {
         List<String> items = new ArrayList<>();
-        BasicItem basicItem = new BasicItem();
+        NonImportedItem basicItem = new NonImportedItem();
 
         items.add("1 book at 12.49");
         items.add("1 music CD at 14.99");
@@ -47,7 +47,7 @@ public class PriceCalculatorTest {
     @Test
     public void shouldCalculatesTotalPriceOfItemsInTheItemListWhenOneImportedItemPresentInTheItemList() {
         List<String> items = new ArrayList<>();
-        BasicItem basicItem = new BasicItem();
+        NonImportedItem basicItem = new NonImportedItem();
 
         items.add("1 imported book at 12.49");
 
@@ -59,7 +59,7 @@ public class PriceCalculatorTest {
     @Test
     public void shouldCalculatesTotalPriceOfItemsInTheItemListWhenMoreThanOneImportedItemPresentInTheItemList() {
         List<String> items = new ArrayList<>();
-        BasicItem basicItem = new BasicItem();
+        NonImportedItem basicItem = new NonImportedItem();
 
         items.add("1 imported book at 12.49");
         items.add("1 imported CD at 12.49");

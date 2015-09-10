@@ -6,11 +6,11 @@ public class PriceCalculator {
 
     private List<String> items;
     private double totalPrice;
-    private BasicItem basicItem;
+    private NonImportedItem nonImportedItem;
 
-    public PriceCalculator(List<String> items, BasicItem basicItem) {
+    public PriceCalculator(List<String> items, NonImportedItem nonImportedItem) {
         this.items = items;
-        this.basicItem = basicItem;
+        this.nonImportedItem = nonImportedItem;
     }
 
     public double calculatesTotalPriceAlongWithSalesTax() {
@@ -21,14 +21,13 @@ public class PriceCalculator {
                 String[] words = item.split(" ");
                 double itemPrice = Double.parseDouble(words[words.length - 1]);
                 if (!words[1].equals("imported")) {
-                    basicItem = new BasicItem();
+                    nonImportedItem = new NonImportedItem();
                     if (words[1].equals("book"))
-                        totalPrice = totalPrice + calculateEachItemPrice(itemPrice, basicItem.getTax());
+                        totalPrice = totalPrice + calculateEachItemPrice(itemPrice, nonImportedItem.getTax());
                     else
                         totalPrice = totalPrice + calculateEachItemPrice(itemPrice, 10);
-                }
-                else {
-                    if(words[2].equals("book"))
+                } else {
+                    if (words[2].equals("book"))
                         totalPrice = totalPrice + calculateEachItemPrice(itemPrice, 5);
                     else
                         totalPrice = totalPrice + calculateEachItemPrice(itemPrice, 15);

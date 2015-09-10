@@ -1,6 +1,6 @@
 package com.thoughtworks.baseline;
 
-public class BasicItem {
+public class NonImportedItem {
 
     public double getTax() {
         return 0.0;
