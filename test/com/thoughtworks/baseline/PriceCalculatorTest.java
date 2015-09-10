@@ -38,6 +38,17 @@ public class PriceCalculatorTest {
 
         PriceCalculator priceCalculator = new PriceCalculator(items);
 
-        assertEquals(29.122, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
+        assertEquals(29.914, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
+    }
+
+    @Test
+    public void shouldCalculatesTotalPriceOfItemsInTheItemListWhenOneImportedItemPresentInTheItemList() {
+        List<String> items = new ArrayList<>();
+
+        items.add("1 imported book at 12.49");
+
+        PriceCalculator priceCalculator = new PriceCalculator(items);
+
+        assertEquals(13.114, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
     }
 }

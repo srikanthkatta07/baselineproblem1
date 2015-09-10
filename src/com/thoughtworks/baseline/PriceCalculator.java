@@ -20,8 +20,10 @@ public class PriceCalculator {
                 double itemPrice = Double.parseDouble(words[words.length - 1]);
                 if (words[1].equals("book"))
                     totalPrice = totalPrice + itemPrice;
-                else
+                else if (words[1].equals("imported")) {
                     totalPrice = totalPrice + itemPrice + ((itemPrice * 5) / 100);
+                } else
+                    totalPrice = totalPrice + itemPrice + ((itemPrice * 10) / 100);
             }
             return totalPrice;
         }
