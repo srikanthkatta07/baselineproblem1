@@ -11,7 +11,7 @@ public class PriceCalculator {
         this.items = items;
     }
 
-    public double CalculatesTotalPriceAlongWithSalesTax() {
+    public double calculatesTotalPriceAlongWithSalesTax() {
         if (items.size() == 0)
             return 0;
         else {
@@ -19,13 +19,17 @@ public class PriceCalculator {
                 String[] words = item.split(" ");
                 double itemPrice = Double.parseDouble(words[words.length - 1]);
                 if (words[1].equals("book"))
-                    totalPrice = totalPrice + itemPrice;
+                    totalPrice = totalPrice + calculateEachItemPrice(itemPrice, 0);
                 else if (words[1].equals("imported")) {
-                    totalPrice = totalPrice + itemPrice + ((itemPrice * 5) / 100);
+                    totalPrice = totalPrice + calculateEachItemPrice(itemPrice, 5);
                 } else
-                    totalPrice = totalPrice + itemPrice + ((itemPrice * 10) / 100);
+                    totalPrice = totalPrice + calculateEachItemPrice(itemPrice, 10);
             }
             return totalPrice;
         }
+    }
+
+    public double calculateEachItemPrice(double itemPrice, double tax) {
+        return itemPrice + ((itemPrice * tax) / 100);
     }
 }

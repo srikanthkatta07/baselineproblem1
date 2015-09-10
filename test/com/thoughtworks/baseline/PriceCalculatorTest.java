@@ -14,7 +14,7 @@ public class PriceCalculatorTest {
 
         PriceCalculator priceCalculator = new PriceCalculator(items);
 
-        assertEquals(0.0, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
+        assertEquals(0.0, priceCalculator.calculatesTotalPriceAlongWithSalesTax(), 0.2d);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class PriceCalculatorTest {
 
         PriceCalculator priceCalculator = new PriceCalculator(items);
 
-        assertEquals(12.49, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
+        assertEquals(12.49, priceCalculator.calculatesTotalPriceAlongWithSalesTax(), 0.2d);
     }
 
     @Test
@@ -38,7 +38,7 @@ public class PriceCalculatorTest {
 
         PriceCalculator priceCalculator = new PriceCalculator(items);
 
-        assertEquals(29.914, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
+        assertEquals(29.914, priceCalculator.calculatesTotalPriceAlongWithSalesTax(), 0.2d);
     }
 
     @Test
@@ -49,6 +49,6 @@ public class PriceCalculatorTest {
 
         PriceCalculator priceCalculator = new PriceCalculator(items);
 
-        assertEquals(13.114, priceCalculator.CalculatesTotalPriceAlongWithSalesTax(), 0.2d);
+        assertEquals(13.114, priceCalculator.calculatesTotalPriceAlongWithSalesTax(), 0.2d);
     }
 }
